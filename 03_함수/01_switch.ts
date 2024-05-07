@@ -37,6 +37,46 @@
     makeEmployee: (type: EmployeeRecord) => Employee;
   }
 
+  class CommisionedEmployee extends Employee {
+    constructor(private type: EmployeeRecord) {
+      super();
+      this.type = type;
+    }
+    isPayday() {
+      return true;
+    }
+    calculatePay() {
+      return 0;
+    }
+    deliverPay(pay: Money) {}
+  }
+  class SalariedEmployee extends Employee {
+    constructor(private type: EmployeeRecord) {
+      super();
+      this.type = type;
+    }
+    isPayday() {
+      return true;
+    }
+    calculatePay() {
+      return 0;
+    }
+    deliverPay(pay: Money) {}
+  }
+  class HourlyEmployee extends Employee {
+    constructor(private type: EmployeeRecord) {
+      super();
+      this.type = type;
+    }
+    isPayday() {
+      return true;
+    }
+    calculatePay() {
+      return 0;
+    }
+    deliverPay(pay: Money) {}
+  }
+
   class EmployeeFactoryImpl implements EmployeeFactory {
     makeEmployee(type: EmployeeRecord) {
       switch (type) {
